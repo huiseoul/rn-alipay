@@ -92,13 +92,13 @@ RCT_REMAP_METHOD(pay, options:(NSDictionary *)options
             NSLog(@"reslut = %@",resultDic);
 
             NSLog(@"orderString = %@", @"支付成功啦啦啦啦！");
-            resolve(@"支付成功!");
+            resolve(resultDic);
         }];
         return;
     }
 
     NSError *error = nil;
-    reject(@"支付失败", @"参数错误", error);
+    reject(@"支付失败failed", @"参数错误", error);
 
 //    if (str) {
 //        resolve(str);
