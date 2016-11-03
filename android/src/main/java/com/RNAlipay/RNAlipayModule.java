@@ -170,6 +170,10 @@ public class RNAlipayModule extends ReactContextBaseJavaModule {
 
 		orderInfo += "&notify_url=\"" + notifyURL + "\"";
 
+		orderInfo += "&currency=\"" + currency + "\"";
+
+		orderInfo += "&forex_biz=\"" + forex_biz + "\"";
+
 		return orderInfo;
 	}
 
