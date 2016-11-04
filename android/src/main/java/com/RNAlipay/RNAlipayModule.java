@@ -14,9 +14,6 @@ import android.text.TextUtils;
 import android.view.View;
 
 
-
-import com.facebook.react.bridge.Arguments;
-import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -107,13 +104,8 @@ public class RNAlipayModule extends ReactContextBaseJavaModule {
 
 		PayTask alipay = new PayTask(getCurrentActivity());
 		String result = alipay.pay(payInfo);
-		PayResult payResult = new PayResult(result);
-		String memo = payResult.getMemo();
-		String resultStatus = payResult.getResultStatus();
-		WritableMap response = Arguments.createMap();
-		response.putString("memo", memo);
-		response.putString("resultStatus", resultStatus);
-		promise.resolve(response);
+		//cb.invoke(result);
+		promise.resolve(result);
     }
   	/**
 	 * create the order info. 创建订单信息
