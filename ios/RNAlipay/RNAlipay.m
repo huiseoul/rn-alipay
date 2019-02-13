@@ -59,6 +59,7 @@ RCT_REMAP_METHOD(pay, options:(NSDictionary *)options
     float totalFee = [[options objectForKey:@"totalFee"] floatValue];
     order.totalFee = [NSString stringWithFormat:@"%0.2f", totalFee]; //商品价格
     order.notifyURL =  [options objectForKey:@"notifyURL"]; //回调URL
+    order.referURL =  [options objectForKey:@"referURL"]; //referURL
 
     order.service = @"mobile.securitypay.pay";
     order.paymentType = @"1";

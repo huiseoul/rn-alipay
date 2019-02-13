@@ -27,6 +27,9 @@
   if (self.notifyURL) {
     [discription appendFormat:@"&notify_url=\"%@\"", self.notifyURL];
   }
+  if (self.referURL) {
+    [discription appendFormat:@"&refer_url=\"%@\"", self.notifyURL];
+  }
   
   if (self.service) {
     [discription appendFormat:@"&service=\"%@\"",self.service];//mobile.securitypay.pay

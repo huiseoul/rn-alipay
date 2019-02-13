@@ -58,6 +58,7 @@ public class RNAlipayModule extends ReactContextBaseJavaModule {
         String subject = options.getString("subject");
         String body = options.getString("body");
         String notifyURL = options.getString("notifyURL");
+		String referURL = options.getString("referURL");
 
         String totalFee;
         if (options.getType("totalFee") == ReadableType.Number) {
@@ -79,7 +80,7 @@ public class RNAlipayModule extends ReactContextBaseJavaModule {
 			return;
 		}
 
-		String orderInfo = getOrderInfo(partner, seller, outTradeNO, subject, body, totalFee, itBPay, showURL, notifyURL, currency, forex_biz);
+		String orderInfo = getOrderInfo(partner, seller, outTradeNO, subject, body, totalFee, itBPay, showURL, notifyURL, referURL, currency, forex_biz);
 
 		/**
 		 * 特别注意，这里的签名逻辑需要放在服务端，切勿将私钥泄露在代码中！
@@ -121,6 +122,7 @@ public class RNAlipayModule extends ReactContextBaseJavaModule {
 	    String itBPay,
 	    String showURL,
 			String notifyURL,
+			String referURL,
 			String currency,
 			String forex_biz
 	) {
@@ -169,6 +171,8 @@ public class RNAlipayModule extends ReactContextBaseJavaModule {
 		// orderInfo += "&paymethod=\"expressGateway\"";
 
 		orderInfo += "&notify_url=\"" + notifyURL + "\"";
+
+		orderInfo += "&refer_url=\"" + referURL + "\"";
 
 		orderInfo += "&currency=\"" + currency + "\"";
 

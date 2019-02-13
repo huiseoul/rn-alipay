@@ -39,7 +39,7 @@
 //支付宝服务器主动通知商户网站里指定的页面http路径。
 @property (nonatomic, copy) NSString *notifyURL;
 
-
+@property (nonatomic, copy) NSString *referURL;
 
 /*********************************可选参数*********************************/
 
